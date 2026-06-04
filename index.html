@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>PapuChat</title>
+</head>
+
+<body>
+    <div class="chat-layout">
+        <aside class="chat-sidebar">
+            <header class="app-header">
+                <h1>PapuChat</h1>
+            </header>
+            <nav class="user-list">
+                <ul>
+                    <li class="chat-item"><a href="#"><span>Juan Pérez</span> </a></li>
+                    <li class="chat-item"><a href="#"><span>Maria López</span> </a></li>
+                    <li class="chat-item"><a href="#"><span>Julian Alvarez</span> </a> </li>
+                    <li class="chat-item"><a href="#"><span>Luis Suarez</span> </a> </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="chat-window">
+            <header class="chat-header">
+                <h2 id="chat-username">Juan Pérez</h2>
+            </header>
+
+            <section>
+                <ol id="message-list">
+                    <li class="yo">
+                        <p>Hola, ¿cómo andas?</p>
+                    </li>
+                    <li class="el">
+                        <p>¡Hola! Estoy bien gracias. ¿Y voce?</p>
+                    </li>
+                </ol>
+            </section>
+
+            <form id="message-form">
+                <label for="message-input">Escribe un mensaje</label>
+                <input id="message-input" type="text" placeholder="Escribe un mensaje...">
+                <button type="submit">Enviar</button>
+            </form>
+        </main>
+    </div>
+</body>
+
+</html>
