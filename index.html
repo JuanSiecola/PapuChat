@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -9,43 +9,75 @@
 </head>
 
 <body>
-    <div class="chat-layout">
+    <main class="chat-layout">
         <aside class="chat-sidebar">
-            <header class="app-header">
+            <header class="chat-sidebar-header">
                 <h1>PapuChat</h1>
             </header>
             <nav class="user-list">
                 <ul>
-                    <li class="chat-item"><a href="#"><span>Juan Pérez</span> </a></li>
-                    <li class="chat-item"><a href="#"><span>Maria López</span> </a></li>
-                    <li class="chat-item"><a href="#"><span>Julian Alvarez</span> </a> </li>
-                    <li class="chat-item"><a href="#"><span>Luis Suarez</span> </a> </li>
+                    <li class="chat-item">
+                        <a href="#">
+                            <div class="avatar"></div>
+                            <div class="chat-meta">
+                                <span class="chat-name">Juan Pérez</span>
+                                <span class="chat-preview">Último mensaje...</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="chat-item">
+                        <a href="#">
+                            <div class="avatar"></div>
+                            <div class="chat-meta">
+                                <span class="chat-name">Juan Pérez</span>
+                                <span class="chat-preview">Último mensaje...</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="chat-item">
+                        <a href="#">
+                            <div class="avatar"></div>
+                            <div class="chat-meta">
+                                <span class="chat-name">Juan Pérez</span>
+                                <span class="chat-preview">Último mensaje...</span>
+                            </div>
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </aside>
-        <main class="chat-window">
+        <section class="chat-window is-active">
             <header class="chat-header">
+                <button id="btn-volver" type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                        <path
+                            d="M73.4 297.4C60.9 309.9 60.9 330.2 73.4 342.7L233.4 502.7C245.9 515.2 266.2 515.2 278.7 502.7C291.2 490.2 291.2 469.9 278.7 457.4L173.3 352L544 352C561.7 352 576 337.7 576 320C576 302.3 561.7 288 544 288L173.3 288L278.7 182.6C291.2 170.1 291.2 149.8 278.7 137.3C266.2 124.8 245.9 124.8 233.4 137.3L73.4 297.3z" />
+                    </svg></button>
                 <h2 id="chat-username">Juan Pérez</h2>
             </header>
 
-            <section>
+            <div class="messages">
                 <ol id="message-list">
-                    <li class="yo">
+                    <li class="message message-yo">
                         <p>Hola, ¿cómo andas?</p>
                     </li>
-                    <li class="el">
+                    <li class="message message-el">
                         <p>¡Hola! Estoy bien gracias. ¿Y voce?</p>
                     </li>
                 </ol>
-            </section>
+            </div>
 
             <form id="message-form">
-                <label for="message-input">Escribe un mensaje</label>
-                <input id="message-input" type="text" placeholder="Escribe un mensaje...">
-                <button type="submit">Enviar</button>
+                <label for="message-input" class="escondete">Escribe un mensaje</label>
+                <input id="message-input" type="text" autocomplete="off" placeholder="Escribe un mensaje...">
+                <label for="image-input"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                        <path
+                            d="M288.6 76.8C344.8 20.6 436 20.6 492.2 76.8C548.4 133 548.4 224.2 492.2 280.4L328.2 444.4C293.8 478.8 238.1 478.8 203.7 444.4C169.3 410 169.3 354.3 203.7 319.9L356.5 167.3C369 154.8 389.3 154.8 401.8 167.3C414.3 179.8 414.3 200.1 401.8 212.6L249 365.3C239.6 374.7 239.6 389.9 249 399.2C258.4 408.5 273.6 408.6 282.9 399.2L446.9 235.2C478.1 204 478.1 153.3 446.9 122.1C415.7 90.9 365 90.9 333.8 122.1L169.8 286.1C116.7 339.2 116.7 425.3 169.8 478.4C222.9 531.5 309 531.5 362.1 478.4L492.3 348.3C504.8 335.8 525.1 335.8 537.6 348.3C550.1 360.8 550.1 381.1 537.6 393.6L407.4 523.6C329.3 601.7 202.7 601.7 124.6 523.6C46.5 445.5 46.5 318.9 124.6 240.8L288.6 76.8z" />
+                    </svg></label>
+                <input type="file" id="image-input" class="escondete" accept="image/*">
+                <button type="submit" id="btn-send">Enviar</button>
             </form>
-        </main>
-    </div>
+        </section>
+    </main>
 </body>
 
 </html>
