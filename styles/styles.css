@@ -167,6 +167,8 @@ button {
     display: none;
     flex-direction: column;
     height: 100%;
+    min-height: 0;
+    overflow: hidden;
 }
 
 .chat-layout.chat-abierto .chat-sidebar {
@@ -219,6 +221,12 @@ button {
 
 .message-el {
     justify-content: flex-start;  /* burbuja a la izquierda */
+}
+
+.message img {
+    max-width: 100%;
+    border-radius: 12px;
+    display: block;
 }
 
 #message-list p {
