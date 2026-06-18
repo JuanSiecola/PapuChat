@@ -159,7 +159,7 @@ button {
 }
 
 .chat-preview {
-    font-size: 0.25px;
+    font-size: 14px;
     color: var(--color-texto-suave);
 }
 
@@ -289,7 +289,7 @@ button {
 @media (min-width: 771px) {
     .chat-layout {
         display: grid;
-        grid-template-columns: 340px 1fr;
+        grid-template-columns: 360px 1fr;
     }
 
     .chat-sidebar {
@@ -301,5 +301,9 @@ button {
 
     .chat-window {
         display: flex;
+    }
+
+    #btn-volver {
+        display: none;
     }
 }
