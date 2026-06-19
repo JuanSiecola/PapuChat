@@ -161,6 +161,9 @@ button {
 .chat-preview {
     font-size: 14px;
     color: var(--color-texto-suave);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .chat-window {
