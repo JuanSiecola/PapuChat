@@ -91,6 +91,15 @@ button {
     flex-direction: column;
 }
 
+.sidebar-footer {
+    margin-top: auto;
+    padding: 16px;
+    background-color: var(--color-primario);
+    color: var(--color-texto-sobre-oscuro);
+    text-align: center;
+    font-size: 16px;
+}
+
 .user-list {
     margin-top: 16px;
     flex-grow: 1;
@@ -216,6 +225,22 @@ button {
 #message-list li {
     display: flex;
     margin-bottom: 12px;
+}
+
+.burbuja {
+    padding: 6px;
+    border-radius: 18px;
+    max-width: 75%;
+    overflow: hidden;
+}
+
+.message-yo .burbuja {
+    background-color: var(--color-mensaje-propio);
+}
+
+.message-el .burbuja {
+    background-color: var(--color-mensaje-ajeno);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
 }
 
 .message-yo {

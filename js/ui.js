@@ -25,10 +25,12 @@ const renderizarMensajes = (mensajes) => {
         const li = document.createElement('li');
         li.className = `message message-${mensaje.remitente}`;
         if (mensaje.tipo === 'image') {
-            li.innerHTML = `<img src="${mensaje.contenido}" alt="Imagen enviada">`;
+            li.innerHTML = `<div class="burbuja"><img src="${mensaje.contenido}" alt="Imagen enviada"></div>`;
         } else {
             li.innerHTML = `<p>${mensaje.contenido}</p>`;
         }
         listaMensajes.appendChild(li);
     });
+    const contenedor = document.querySelector('.messages');
+    contenedor.scrollTop = contenedor.scrollHeight; //esto hace que el scroll se mantenga abajo cada vez que se renderizan los mensajes, para mostrar siempre el último mensaje enviado o recibido
 }
