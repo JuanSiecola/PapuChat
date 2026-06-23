@@ -32,5 +32,5 @@ const renderizarMensajes = (mensajes) => {
         listaMensajes.appendChild(li);
     });
     const contenedor = document.querySelector('.messages');
-    contenedor.scrollTop = contenedor.scrollHeight; //esto hace que el scroll se mantenga abajo cada vez que se renderizan los mensajes, para mostrar siempre el último mensaje enviado o recibido
+    contenedor.scrollTop = contenedor.scrollHeight; //esto hace que el scroll se mantenga abajo cada vez que se renderizan los mensajes
 }
