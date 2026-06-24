@@ -53,7 +53,7 @@ listaContactos.addEventListener('click', async (e) => {
     const idContacto = link.dataset.id;
     contactoActivo = idContacto;
     const nombreContacto = link.dataset.nombre;
-    layout.classList.add('chat-abierto');
+    layout.classList.add('chat-abierto'); 
     document.getElementById('chat-username').innerText = nombreContacto;
     let mensajes = cargarHistorial(idContacto);
     if (!mensajes) { //en caso que no haya mensajes en localStorage para ese contacto, salgo a buscarlos a la API
