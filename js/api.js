@@ -25,7 +25,6 @@ const fetchMensajes = async (idContacto) => {
         }
 
         const data = await response.json();
-        console.log(data.mensajes.timestamp);
         return data.mensajes;
     } catch (error) {
         console.error('Error al obtener los chats:', error);
