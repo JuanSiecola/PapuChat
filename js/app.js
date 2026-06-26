@@ -4,6 +4,8 @@ const listaContactos = document.querySelector('.user-list ul');
 const messageForm = document.getElementById('message-form');
 const imageInput = document.getElementById('image-input');
 
+let contactoActivo = null; // guarda el idContacto del chat actualmente abierto
+
 const respuestaAleatoria = () => {
     const respuestas = [
         "Sarpado pibe!",
@@ -37,10 +39,9 @@ const simularRespuesta = () => {
         historial.push(respuesta);
         guardarHistorial(contactoActivo, historial);
         renderizarMensajes(historial);
+        refrescarUltimoMensaje(contactoActivo, respuesta.contenido);
     }, 1500);
 }
-
-let contactoActivo = null;
 
 botonVolver.addEventListener('click', () => {
     layout.classList.remove('chat-abierto');
@@ -79,6 +80,7 @@ messageForm.addEventListener('submit', (e) => {
     historial.push(mensaje); //agrego el nuevo mensaje al historial
     guardarHistorial(contactoActivo, historial); //guardo el historial actualizado a localStorage
     renderizarMensajes(historial);
+    refrescarUltimoMensaje(contactoActivo, mensaje.contenido);
     input.value = '';
     simularRespuesta();
 });
@@ -101,6 +103,7 @@ imageInput.addEventListener('change', (e) => {
         historial.push(mensaje);
         guardarHistorial(contactoActivo, historial);
         renderizarMensajes(historial);
+        refrescarUltimoMensaje(contactoActivo, '📷 Imagen');
         imageInput.value = ''; //limpio el input de archivos para permitir subir la misma imagen nuevamente porq no me deja ah
     }
     simularRespuesta();
