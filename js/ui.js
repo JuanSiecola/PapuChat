@@ -18,6 +18,16 @@ const renderizarContactos = (chats) => {
     });
 }
 
+const formatearFecha = (fechaIsoString) => {
+    const fecha = new Date(fechaIsoString);
+
+    const opciones = {
+    timeStyle: 'short'   // Ejemplo: 10:00
+    };
+
+  return new Intl.DateTimeFormat('default', opciones).format(fecha);
+}
+
 const renderizarMensajes = (mensajes) => {
     const listaMensajes = document.getElementById('message-list');
     listaMensajes.innerHTML = '';
@@ -25,9 +35,9 @@ const renderizarMensajes = (mensajes) => {
         const li = document.createElement('li');
         li.className = `message message-${mensaje.remitente}`;
         if (mensaje.tipo === 'image') {
-            li.innerHTML = `<div class="burbuja"><img src="${mensaje.contenido}" alt="Imagen enviada"></div>`;
+            li.innerHTML = `<div class="burbuja"><img src="${mensaje.contenido}" alt="Imagen enviada"><span>${formatearFecha(mensaje.timestamp)}</span></div>`;
         } else {
-            li.innerHTML = `<p>${mensaje.contenido}</p>`;
+            li.innerHTML = `<div class="burbuja"><p>${mensaje.contenido}</p><span>${formatearFecha(mensaje.timestamp)}</span></div>`;
         }
         listaMensajes.appendChild(li);
     });

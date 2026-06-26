@@ -106,8 +106,6 @@ imageInput.addEventListener('change', (e) => {
     simularRespuesta();
 });
 
-
-
 document.addEventListener('DOMContentLoaded', async () => {
     let chats = cargarChats(); //cargarchats es de localstorage
     if (!chats) {
