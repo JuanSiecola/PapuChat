@@ -53,14 +53,14 @@ listaContactos.addEventListener('click', async (e) => {
     const idContacto = link.dataset.id;
     contactoActivo = idContacto;
     const nombreContacto = link.dataset.nombre;
-    layout.classList.add('chat-abierto'); 
+    layout.classList.add('chat-abierto');
     document.getElementById('chat-username').innerText = nombreContacto;
     let mensajes = cargarHistorial(idContacto);
     if (!mensajes) { //en caso que no haya mensajes en localStorage para ese contacto, salgo a buscarlos a la API
         mensajes = await fetchMensajes(idContacto); //salgo a buscar los mensajes a la API
         guardarHistorial(idContacto, mensajes); //los guardo en localStorage para futuras consultas sin necesidad de ir a la API nuevamente
     }
-    renderizarMensajes(mensajes); 
+    renderizarMensajes(mensajes);
 });
 
 messageForm.addEventListener('submit', (e) => {
@@ -71,7 +71,7 @@ messageForm.addEventListener('submit', (e) => {
     const mensaje = {
         id: Date.now().toString(),
         tipo: 'text',
-        contenido : contenido,
+        contenido: contenido,
         timestamp: new Date().toISOString(),
         remitente: 'yo'
     };

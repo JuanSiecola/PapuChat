@@ -22,7 +22,8 @@ const formatearFecha = (fechaIsoString) => {
     const fecha = new Date(fechaIsoString);
 
     const opciones = {
-    timeStyle: 'short'   // Ejemplo: 10:00
+    dateStyle: 'short',
+    timeStyle: 'short'   
     };
 
   return new Intl.DateTimeFormat('default', opciones).format(fecha);
@@ -35,9 +36,9 @@ const renderizarMensajes = (mensajes) => {
         const li = document.createElement('li');
         li.className = `message message-${mensaje.remitente}`;
         if (mensaje.tipo === 'image') {
-            li.innerHTML = `<div class="burbuja"><img src="${mensaje.contenido}" alt="Imagen enviada"><span>${formatearFecha(mensaje.timestamp)}</span></div>`;
+            li.innerHTML = `<div class="burbuja"><img src="${mensaje.contenido}" alt="Imagen enviada"><span class="message-time">${formatearFecha(mensaje.timestamp)}</span></div>`;
         } else {
-            li.innerHTML = `<div class="burbuja"><p>${mensaje.contenido}</p><span>${formatearFecha(mensaje.timestamp)}</span></div>`;
+            li.innerHTML = `<div class="burbuja"><p>${mensaje.contenido}</p><span class="message-time">${formatearFecha(mensaje.timestamp)}</span></div>`;
         }
         listaMensajes.appendChild(li);
     });
